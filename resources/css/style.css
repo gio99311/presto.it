@@ -53,14 +53,29 @@ body {
 }
 
 .buttonCustHome {
-    padding: 20px 60px;
-    
-
+    padding: 10px 60px;
 }
 
 .buttonCust:hover{
     background-position: -100% 0px;
     box-shadow: 3px 8px var(--color-l);
+}
+
+/* CATEGORY */
+
+.categoryBox{
+    background-color: var(--color-t);
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+    height: min-content;
+    border: var(--color-q) 2px solid;
+    
+}
+
+.categoryBox:hover{
+    transition: 0.8s;
+    box-shadow: 5px 8px var(--color-s);
 }
 
 /* Navbar */
@@ -83,12 +98,13 @@ body {
 }
 
 .nav-link:hover {
-text-decoration: underline;
-color: var(--color-s) !important;
-text-underline-offset: 5px;
-animation: zoom 0.2s;
-animation-fill-mode: forwards;
+    text-decoration: underline;
+    color: var(--color-s) !important;
+    text-underline-offset: 5px;
+    animation: zoom 0.2s;
+    animation-fill-mode: forwards;
 }
+
 @media only screen and (max-width: 600px) {
     .nav-link:hover {
         animation: none;
@@ -214,21 +230,34 @@ animation-fill-mode: forwards;
     
 }
 
-.form-custom input:focus {
+.form-custom2{
+    border-bottom: var(--color-q) 3px solid;
+    
+}
+
+.form-custom2 input:focus {
     border: none;
     outline: none;
 }
 
-.form-custom input::placeholder {
+.form-custom2 input::placeholder {
     color: var(--color-p);
 
 }
 
+.form-custom2:hover {
+    color: var(--color-t);
+    padding: 10px 30px;
+    border-radius: 10px;
+    transition: 0.8s;
+    box-shadow: inset 5em -6px var(--color-q), inset 7em -12px var(--color-s);
+    /* border-bottom: none; */
+}
+
 @media screen and (max-width: 600px) {
-    .form-custom{
+    .form-custom2{
         font-size: 15px !important;
-        padding: 0px !important;
-        margin-left: 15px !important;
+        padding: 10px !important;
         
     }
     
@@ -236,14 +265,6 @@ animation-fill-mode: forwards;
 
 
 
-@media only screen and (max-width: 600px) {
-    .form-custom{
-        font-size: 20px !important;
-        max-width: 300px !important;
-        padding: 10px 30px !important;
-        
-    }
-}
 
 .boxShadows{
     border: var(--color-t) 4px solid;

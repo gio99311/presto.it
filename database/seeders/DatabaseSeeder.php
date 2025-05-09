@@ -74,27 +74,153 @@ class DatabaseSeeder extends Seeder
             'is_pending' => NULL,
         ];
 
-        $articles = [
-            ['title' => 'Divano in tessuto grigio 3 posti - Ottime condizioni', 'description' => 'Comodo divano in tessuto grigio chiaro, 3 posti, acquistato nel 2021. Nessuna macchia o segno di usura. Vendo per cambio arredamento. Misure: 220x95 cm. Ritiro a carico dell\'acquirente.'],
-            ['title' => 'iPhone 13 128GB Midnight - Perfettamente funzionante', 'description' => 'iPhone 13 colore Midnight, memoria da 128GB, sempre usato con cover e vetro temperato. Batteria al 92%. Incluso cavo originale e scatola. Vendo per passaggio a modello successivo.'],
-            ['title' => 'Scrivania da studio IKEA bianca - come nuova', 'description' => 'Scrivania modello LINNMON/ADILS, colore bianco, 120x60 cm. Usata pochissimo, nessun graffio. Ideale per smart working o camera studenti. Ritiro a mano zona centro.'],
-            ['title' => 'Bici da città uomo - 28", cambio Shimano 6 velocità', 'description' => 'Vendesi bici da passeggio in buono stato, gomme nuove, freni regolati, sella comoda. Cambio Shimano 6 velocità, telaio leggero. Ideale per uso quotidiano.'],
-            ['title' => 'Giacca in pelle nera uomo - taglia L', 'description' => 'Giacca vera pelle, marca Zara Man, taglia L. Stile biker, chiusura zip, fodera interna. Ottimo stato, indossata poche volte. Prezzo trattabile.'],
-            ['title' => 'Seggiolone pappa Chicco Polly - reclinabile e regolabile', 'description' => 'Seggiolone Chicco Polly 2 in 1, colore grigio e arancio. Reclinabile, altezza regolabile, facilmente richiudibile. Usato ma in ottime condizioni. Facile da pulire.'],
-            ['title' => 'Set LEGO Star Wars - X-Wing Fighter completo', 'description' => 'Set LEGO originale X-Wing Fighter (codice 75218), completo di tutti i pezzi e istruzioni. Senza scatola. Ideale per collezionisti o appassionati.'],
-            ['title' => 'Macchina del caffè De\'Longhi Nespresso - funzionante', 'description' => 'Macchina a capsule Nespresso De’Longhi, compatta e veloce. Colore nero, funzionamento perfetto. Inclusi 10 capsule miste in omaggio.'],
-            ['title' => 'Tavolino da salotto in vetro e metallo', 'description' => 'Tavolino con piano in vetro temperato e struttura in metallo nero. Design moderno, stabile e facile da pulire. Misure: 90x50 cm, altezza 40 cm.'],
-            ['title' => 'Monitor PC Samsung 24" Full HD - perfetto per studio o gaming', 'description' => 'Monitor Samsung da 24", risoluzione Full HD, ingresso HDMI e VGA. Usato solo per lavoro da casa. Colori brillanti e nessun pixel bruciato.']
-        ];
+        // $articles = [
+        //     ['title' => 'Divano in tessuto grigio 3 posti - Ottime condizioni', 'description' => 'Comodo divano in tessuto grigio chiaro, 3 posti, acquistato nel 2021. Nessuna macchia o segno di usura. Vendo per cambio arredamento. Misure: 220x95 cm. Ritiro a carico dell\'acquirente.'],
+        //     ['title' => 'iPhone 13 128GB Midnight - Perfettamente funzionante', 'description' => 'iPhone 13 colore Midnight, memoria da 128GB, sempre usato con cover e vetro temperato. Batteria al 92%. Incluso cavo originale e scatola. Vendo per passaggio a modello successivo.'],
+        //     ['title' => 'Scrivania da studio IKEA bianca - come nuova', 'description' => 'Scrivania modello LINNMON/ADILS, colore bianco, 120x60 cm. Usata pochissimo, nessun graffio. Ideale per smart working o camera studenti. Ritiro a mano zona centro.'],
+        //     ['title' => 'Bici da città uomo - 28", cambio Shimano 6 velocità', 'description' => 'Vendesi bici da passeggio in buono stato, gomme nuove, freni regolati, sella comoda. Cambio Shimano 6 velocità, telaio leggero. Ideale per uso quotidiano.'],
+        //     ['title' => 'Giacca in pelle nera uomo - taglia L', 'description' => 'Giacca vera pelle, marca Zara Man, taglia L. Stile biker, chiusura zip, fodera interna. Ottimo stato, indossata poche volte. Prezzo trattabile.'],
+        //     ['title' => 'Seggiolone pappa Chicco Polly - reclinabile e regolabile', 'description' => 'Seggiolone Chicco Polly 2 in 1, colore grigio e arancio. Reclinabile, altezza regolabile, facilmente richiudibile. Usato ma in ottime condizioni. Facile da pulire.'],
+        //     ['title' => 'Set LEGO Star Wars - X-Wing Fighter completo', 'description' => 'Set LEGO originale X-Wing Fighter (codice 75218), completo di tutti i pezzi e istruzioni. Senza scatola. Ideale per collezionisti o appassionati.'],
+        //     ['title' => 'Macchina del caffè De\'Longhi Nespresso - funzionante', 'description' => 'Macchina a capsule Nespresso De’Longhi, compatta e veloce. Colore nero, funzionamento perfetto. Inclusi 10 capsule miste in omaggio.'],
+        //     ['title' => 'Tavolino da salotto in vetro e metallo', 'description' => 'Tavolino con piano in vetro temperato e struttura in metallo nero. Design moderno, stabile e facile da pulire. Misure: 90x50 cm, altezza 40 cm.'],
+        //     ['title' => 'Monitor PC Samsung 24" Full HD - perfetto per studio o gaming', 'description' => 'Monitor Samsung da 24", risoluzione Full HD, ingresso HDMI e VGA. Usato solo per lavoro da casa. Colori brillanti e nessun pixel bruciato.']
+        // ];
 
-        foreach($articles as $article) {
-            $createdArticle = Article::create([
-                'title' => $article['title'],
-                'description' => $article['description'],
-                'price' => rand(10, 1000),
-                'category_id' => rand(1, 10),
+        // foreach($articles as $article) {
+        //     $createdArticle = Article::create([
+        //         'title' => $article['title'],
+        //         'description' => $article['description'],
+        //         'price' => rand(10, 1000),
+        //         'category_id' => rand(1, 10),
+        //         'user_id' => 1,
+        //         'is_accepted' => $values[array_rand($values)],
+        //     ]);
+        // }
+
+        $annunci = [
+            [
+                'title' => 'Vendo iPhone 12 Pro',
+                'description' => 'Telefono cellulare in buone condizioni',
+                'price' => 500,
+                'category_id' => 4,
                 'user_id' => 1,
-                'is_accepted' => $values[array_rand($values)],
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Giacca di pelle invernale',
+                'description' => 'Giacca di pelle per uomo, taglia L',
+                'price' => 150,
+                'category_id' => 9,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Motori Yamaha per moto',
+                'description' => 'Motori nuovi per moto Yamaha, 650cc',
+                'price' => 800,
+                'category_id' => 4,
+                'user_id' => 1,
+                'is_accepted' => null
+            ],
+            [
+                'title' => 'Macchina da caffè Nespresso',
+                'description' => 'Macchina da caffè compatibile con capsule Nespresso',
+                'price' => 200,
+                'category_id' => 7,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Seggiolone per bambini',
+                'description' => 'Seggiolone per bambini, 0-3 anni',
+                'price' => 100,
+                'category_id' => 6,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Vendo Samsung TV 4K',
+                'description' => 'TV 4K da 55 pollici, in buone condizioni',
+                'price' => 400,
+                'category_id' => 4,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Gilet da sci per uomo',
+                'description' => 'Gilet da sci per uomo, taglia M',
+                'price' => 80,
+                'category_id' => 9,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Cuffie audio Sony',
+                'description' => 'Cuffie audio wireless Sony, in buone condizioni',
+                'price' => 120,
+                'category_id' => 4,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Vendo bicicletta elettrica',
+                'description' => 'Bicicletta elettrica per adulti, in buone condizioni',
+                'price' => 600,
+                'category_id' => 3,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Pannoloni per bambini',
+                'description' => 'Pannoloni per bambini, 100 pezzi',
+                'price' => 50,
+                'category_id' => 6,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Vendo Xbox One',
+                'description' => 'Console di gioco Xbox One, in buone condizioni',
+                'price' => 250,
+                'category_id' => 4,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Cuscino per auto',
+                'description' => 'Cuscino per auto, in pelle',
+                'price' => 30,
+                'category_id' => 7,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Vendo Nikon D5600',
+                'description' => 'Fotocamera digitale Nikon D5600, in buone condizioni',
+                'price' => 450,
+                'category_id' => 4,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+            [
+                'title' => 'Giochi per bambini',
+                'description' => 'Giochi per bambini, 5 pezzi',
+                'price' => 40,
+                'category_id' => 6,
+                'user_id' => 1,
+                'is_accepted' => true
+            ],
+        ];
+        
+        foreach($annunci as $annuncio) {
+            $createdArticle = Article::create([
+                'title' => $annuncio['title'],
+                'description' => $annuncio['description'],
+                'price' => $annuncio['price'],
+                'category_id' => $annuncio['category_id'],
+                'user_id' => $annuncio['user_id'],
+                'is_accepted' => $annuncio['is_accepted'],
             ]);
         }
 
